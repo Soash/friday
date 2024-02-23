@@ -152,4 +152,4 @@ IMGBB_API_KEY = env('IMGBB_API_KEY')
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app','https://*.fridayfun.xyz',]
