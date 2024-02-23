@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.name }} Products</title>
+
+    {% load static %}
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'common.css' %}"/>
+    <link rel="stylesheet" href="{% static 'category.css' %}"/>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">
+          <img src="https://i.ibb.co/bHdJw7m/friday.png"/>
+        </a>
+    </nav>
+    <h1>{{ category.name }} Products</h1>
+
+    <div class="product-container">
+    {% for product in products %}
+    <div class="product">
+        <img src="{{ product.images.first.imgbb_url }}">
+        <span>{{ product.name }}</span><br>
+        <span>Price: ${{ product.price }}</span>
+        <a href="{% url 'product' category_slug=category.slug product_id=product.id %}" class="button-6">View Details</a>
+    </div>
+    {% endfor %}
+    </div>
+   
+    <footer class="footer">
+        <p><a href="https://www.example.com" target="_blank">Friday</a> &#169; 2024</p>
+    </footer>
+</body>
+</html>

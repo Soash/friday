@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home</title>
+
+    {% load static %}
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'home.css' %}"/>
+    <link rel="stylesheet" href="{% static 'common.css' %}"/>
+  </head>
+  <body>
+    <nav>
+        <a href="{% url 'home' %}">
+          <img src="https://i.ibb.co/bHdJw7m/friday.png"/>
+        </a>
+    </nav>
+
+    
+    <div class="slide-container">
+      <div class="slide">
+        {% for image in banner %}
+        {% if forloop.first %}
+          <img src="{{ image.imgbb_url }}" class="active">
+        {% else %}
+          <img src="{{ image.imgbb_url }}">
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="controllers">
+        <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+    
+
+    <h1>CATEGORIES</h1>
+    <div class="category-container">
+        {% for category in categories %}
+        <div class="category">
+        <img src="{{ category.imgbb_url }}"/>
+        <a href="category/{{ category.slug }}" class="button-6">{{ category.name }}</a>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <footer class="footer">
+      <p><a href="https://www.example.com" target="_blank">Friday</a> &#169; 2024</p>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'home.js' %}"></script>
+  </body>
+</html>

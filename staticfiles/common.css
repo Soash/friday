@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap'); 
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+nav{
+  display: flex;
+  justify-content: center;
+  background-color: #79e4ff;
+}
+nav img{
+  width: 100px;
+}
+
+h1{
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* slide */
+.slide-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slide{
+  width: 50%;
+}
+.slide img{
+  width: 100%;
+  display: none;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.slide img.active{
+  display: block;
+}
+.controllers{
+  margin-top: -50px;
+  margin-bottom: 25px;
+  z-index: 1000;
+}
+.prev{
+  margin-right: 25px;
+}
+.next{
+  margin-left: 25px;
+}
+
+
+.button-6 {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+}
+.button-6:hover,
+.button-6:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+.button-6:hover {
+    transform: translateY(-1px);
+}
+.button-6:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}
+
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0px;
+    margin-top: 20px;
+    text-align: center;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* CSS for mobile devices */
+@media only screen and (max-width: 768px) {
+    nav img{
+      width: 75px;
+    }
+    .slide{
+      width: 100%;
+    }
+  }
+  
